@@ -1,0 +1,405 @@
+    :root {
+      --border-color: hsl(200, 26%, 54%);
+      --span-bg-color: hsl(202, 86%, 94%);
+      --span-text-color: hsl(200, 24%, 40%);
+    }
+
+    * {
+      font-family: "Plus Jakarta Sans";
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: hsl(202, 86%, 94%);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding-block: 4rem;
+    }
+
+    .card {
+      width: 60rem;
+      display: flex;
+      justify-content: center;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 1.5rem;
+      box-shadow: 0 24px 48px hsla(202, 72%, 10%, 0.1);
+    }
+
+    .layout-one {
+      width: 50%;
+      padding: 2.5rem;
+    }
+
+    .layout-two {
+      width: 50%;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: hsl(202, 55%, 16%);
+      border-radius: 0 1.5rem 1.5rem 5rem;
+    }
+
+    /* Layout one */
+
+    .calculator-title-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .form-section-one {
+      margin-top: 2rem;
+    }
+
+    .form-section-two {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .term-section {
+      margin-right: 1rem;
+    }
+
+    .interest-rate {
+      margin-left: 1rem;
+    }
+
+    /* Radio button section */
+
+    .form-section-three {
+      margin-top: 1rem;
+    }
+
+    .radio-buttons {
+      margin-top: 0.75rem;
+    }
+
+    .radio-repayment, .radio-interest {
+      border-radius: 0.5rem;
+      border: 1px solid hsl(200, 24%, 40%);
+      padding-block: 0.8rem;
+      margin-block: 0.5rem;
+      width: 100%;
+    }
+
+    .radio-repayment:hover, .radio-interest:hover {
+      border: 1px solid hsl(61, 70%, 52%);
+    }
+
+    .radio-repayment:active, .radio-interest:active {
+      border: 1px solid hsl(61, 70%, 52%);
+      background-color: hsla(61, 70%, 52%, 0.2);
+    }
+
+    /* Custom radio */
+
+    #type-repayment, #type-interest {
+      appearance: none;
+      height: 1rem;
+      width: 1rem;
+      margin-left: 1rem;
+      border-radius: 50%;
+      background: hsl(0, 0%, 100%);
+      border: 2px solid hsl(200, 24%, 40%);
+    }
+
+    #type-repayment:checked, #type-interest:checked {
+      outline: 2px solid hsl(61, 70%, 52%);
+      background: hsl(61, 70%, 52%);
+      border: 3px solid hsl(0, 0%, 100%);
+    }
+
+    /* Layout two */
+
+    .layout-completed {
+      align-self:stretch;
+    }
+
+    .repayments-card {
+      text-align: left;
+      background-color: hsl(202, 72%, 10%);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 0 hsl(61, 70%, 52%) inset;
+      color: hsl(200, 24%, 40%);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .monthly-repayments-section {
+      border-bottom: 1px solid hsl(200, 24%, 40%);
+    }
+
+    /* Input fields */
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    .input-fields {
+      outline: none;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-color);
+      width: 100%;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      font-size: 1rem;
+      color: hsl(202, 55%, 16%);
+      font-weight: 700;
+    }
+
+    .input-fields:hover {
+      border: 1px solid hsl(202, 55%, 16%);
+    }
+
+    .input-fields:focus {
+      border: 1px solid hsl(61, 70%, 52%);
+    }
+
+    .input-fields#mortgage-amount {
+      padding-left: 3.5rem;
+    }
+
+    .input-fields#mortgage-term {
+      padding-right: 5.2rem;
+    }
+
+    .input-fields#interest-rate{
+      padding-right: 3.5rem;
+    }
+
+    .input-divs {
+      position: relative;
+      padding-block: 0.75rem;
+    }
+
+    .input-divs span {
+      position: absolute;
+      padding-block: 0.75rem;
+      padding-inline: 1rem;
+      background-color: var(--span-bg-color);
+      color: var(--span-text-color);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .pounds {
+      top: 0.8rem;
+      left: 0.05rem;
+      border-radius: 0.4rem 0 0 0.4rem;
+    }
+
+    .years {
+      top: 0.8rem;
+      right: 0.05rem;
+      border-radius: 0 0.4rem 0.4rem 0;
+    }
+
+    .percentage {
+      top: 0.8rem;
+      right: 0.05rem;
+      border-radius: 0 0.4rem 0.4rem 0;
+    }
+
+    /* Calculate button */
+
+    .calculate-button {
+      color: hsl(202, 55%, 16%);
+      font-weight: 700;
+      font-size: 1rem;
+      background-color: hsl(61, 70%, 52%);
+      padding-block: 1rem;
+      padding-inline: 2rem;
+      margin-top: 2rem;
+      border: none;
+      border-radius: 2.5rem;
+    }
+
+    .calculate-button:hover {
+      background-color: hsl(61, 70%, 70%);
+      cursor: pointer;
+    }
+
+    .calculate-button img {
+      vertical-align: middle;
+      margin-top: -0.25rem;
+      margin-right: 0.5rem;
+      height: 1.25rem;
+    }
+    
+    /* Text */
+
+    .calculator-title {
+      color: hsl(202, 55%, 16%);
+      font-weight: 700;
+      margin-block: 0;
+    }
+
+    #clear-all {
+      color: hsl(200, 24%, 40%);
+      text-decoration: underline;
+      font-weight: 500;
+      margin-block: 0;
+    }
+
+    #clear-all:hover {
+      color: hsl(202, 55%, 16%);
+      cursor: pointer;
+    }
+
+    label {
+      color: hsl(200, 24%, 40%);
+      font-weight: 500;
+    }
+
+    .repayment-label, .interest-label {
+      color: hsl(202, 55%, 16%);
+      font-weight: 700;
+      margin-left: 0.5rem;
+      vertical-align:top;
+    }
+
+    .empty-title {
+      color: hsl(0, 0%, 100%);
+      font-weight: 600;
+    }
+
+    .empty-subtitle {
+      color: hsl(200, 26%, 54%);
+      font-weight: 500;
+    }
+
+    .completed-title {
+      color: hsl(0, 0%, 100%);
+      font-weight: 600;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .completed-subtitle {
+      color: hsl(200, 26%, 54%);
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .monthly-repayments-title, .total-repayments-title {
+      color: hsl(200, 26%, 54%);
+      font-weight: 500;
+      margin-block: 0;
+    }
+
+    .total-repayments-title {
+      margin-top: 2rem;
+    }
+    
+    #monthly-repayment-figure {
+      font-size: 4rem;
+      color: hsl(61, 70%, 52%);
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    #total-repayment-figure {
+      color: hsl(0, 0%, 100%);
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+
+    .error-message {
+      color: hsl(4, 69%, 50%);
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin-block: 0;
+    }
+
+    @media screen and (max-width:48em) {
+
+      .container {
+        padding-block: 0;
+      }
+
+      .card {
+        max-width: 100%;
+        display: block;
+        border-radius: 0;
+        box-shadow: unset;
+      }
+      
+      .layout-one {
+        width: 100%;
+        padding-inline: 2rem;
+        padding-block: 3rem;
+        box-sizing: border-box;
+      }
+
+      .layout-two {
+        width: 100%;
+        padding-inline: 2rem;
+        padding-block: 3rem;
+        display: block;
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+
+      .calculator-title-section {
+        display: block;
+      }
+
+      .form-section-two {
+        margin-top: 0;
+        display: block;
+      }
+  
+      .term-section {
+        margin-right: 0;
+        margin-top: 1rem;
+      }
+  
+      .interest-section {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+
+      /* Custom radio */
+
+      #type-repayment, #type-interest {
+      height: 1.1rem;
+      width: 1.1rem;
+      }
+
+      .calculate-button {
+        padding-block: 1.25rem;
+        padding-inline: 0;
+        width: 100%;
+        font-size: 1.25rem;
+      }
+
+      /* Text */
+
+      .calculator-title {
+        font-size: 1.75rem;
+      }
+
+      #clear-all {
+        margin-top: 1rem;
+      }
+
+      .repayment-label, .interest-label {
+        font-size: 1.1rem;
+      }
+
+    }
